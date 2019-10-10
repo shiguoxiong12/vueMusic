@@ -6,6 +6,7 @@
 <template>
 <div>
     <buttonaaa/>
+    <!-- <bar/> -->
     <div class="recommend" v-show="bannerList.length>0">
          <banner :bannerlist="bannerList"/>
        
@@ -48,12 +49,12 @@
            </div> 
           
         </div>
-         <div v-show='bannerList.length==0' class="loading">
-               <!--<van-loading  class='spinner'  type="spinner" color="#1989fa">
+         <!--_getSongList<div v-show='bannerList.length==0' class="loading">
+               <van-loading  class='spinner'  type="spinner" color="#1989fa">
                    加载中...
-               </van-loading>-->
-              <!-- <loading2></loading2>-->
-           </div>
+               </van-loading>
+              <loading2></loading2>
+           </div>-->
 </div>
 </template>
 
@@ -62,15 +63,17 @@
     import banner from '@/components/banner'
     import layout from '@/components/layout'
     import loading2 from '@/components/loading'
+    import bar from '@/components/bar'
     export default {
          created(){
-           //  this._getRecommend()
-            // this._getSongList()
+             this._getRecommend()
+             this._getSongList()
          },
          components:{
             banner,
             layout,
-            loading2
+            loading2,
+            bar
          },
          data(){
             return {
