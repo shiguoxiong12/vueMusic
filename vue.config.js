@@ -8,6 +8,7 @@ const pxtorem = require('postcss-pxtorem');
 module.exports={
     publicPath:'/',
     devServer: {
+       port: 9000,
         proxy: { // 代理跨域
           '/api': { // 代理url关键字
             target: 'https://c.y.qq.com', // 需要代理的地址
