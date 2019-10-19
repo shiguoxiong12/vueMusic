@@ -63,7 +63,7 @@
     import banner from '@/components/banner'
     import layout from '@/components/layout'
     import loading2 from '@/components/loading'
-    import bar from '@/components/bar'
+    //import bar from '@/components/bar'
     export default {
          created(){
              this._getRecommend()
@@ -73,7 +73,7 @@
             banner,
             layout,
             loading2,
-            bar
+           // bar
          },
          data(){
             return {
