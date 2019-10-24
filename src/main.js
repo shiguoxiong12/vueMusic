@@ -13,6 +13,7 @@ import './scss/index.scss'
 import vant from 'vant';
 import 'vant/lib/index.css';
 import './gloab'
+
 import VueLazyload from 'vue-lazyload'
 Vue.use(VueLazyload,{
   preLoad: 1.3,

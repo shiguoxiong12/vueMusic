@@ -4,12 +4,13 @@
  * @Description: 
  -->
 <template>
+  <div>
     <div class="singers wrapper" ref="Scroll">
          <ul class="content" ref="content">
             <li v-for="(item,index) in singerList" :key="index" class="first_floor" ref='first_floor'>
                 <h3 class="IndexKey">{{item.title}}</h3>
                 <ul class="sub">
-                     <li v-for="(item2,key2) in item.items" :key="key2" class="second_floor">
+                     <li v-for="(item2,key2) in item.items" :key="key2" @click="selectItem(item2)" class="second_floor">
                          <div class="singerImg">
                              <img v-lazy="item2.avtor"/>
                          </div>
@@ -35,6 +36,10 @@
             </ul>
         </div>
     </div>
+     <transition name="slide">
+         <router-view/>
+     </transition>
+  </div>
 </template>
 
 <script>
@@ -56,22 +61,21 @@ import Singer from '@/common/singer.js'
              this._getSingers()
          },
          mounted(){
-             let wrapper =this.$refs.Scroll
+             let wrapper =this.$refs.Scroll;
              this.scroll = new BScroll(wrapper,{
                   scrollY: true,
                   probeType:3,
                   click: true
              })
              this.scroll.on('scroll',({x,y})=>{
-                 console.log(y)
+                 console.log(this)
                  if(y<0 && Math.abs(y)>80){
                      this.hoverTitle=true;
                  }else{
                       this.hoverTitle=false;
                  }
-               //  let Y=document.querySelector('.sub').scrollTop;
-                 let index=this.getIndex(this.subTop,Math.abs(y))
-                 this.currentIndex=this.getIndex(this.subTop,Math.abs(y))
+                 //let index=this.getIndex(this.subTop,Math.abs(y))  
+                 this.currentIndex=this.getIndex(this.subTop,Math.abs(y))//getIndex 獲取滾動頁面index
                  this.hoverIndex=this.singerList[this.currentIndex].title
              })
             this._getDomOffsetTop().then(data=>{
@@ -79,7 +83,6 @@ import Singer from '@/common/singer.js'
             })
          },
          computed:{
-             
              currentSingerList:function(){
                 let obj={};
                 let curr=[...this.singerList];
@@ -106,6 +109,11 @@ import Singer from '@/common/singer.js'
                  }
                  this.scroll.scrollToElement(this.$refs.first_floor[index], 2000, 0, 0);
                   this.hoverIndex=this.singerList[this.currentIndex].title
+             },
+             selectItem(obj){
+               this.$router.push({
+                   path:`/singers/${obj.singermid}`
+               })
              },
              getIndex(timeArr,time) {
                 var timeIndex = -1;
@@ -151,6 +159,7 @@ import Singer from '@/common/singer.js'
                       if(index<10){  
                           map.hot.items.push(new Singer (
                              item.Fsinger_id,
+                             item.Fsinger_mid,
                              item.Fsinger_name,
                           ))
                       }
@@ -162,6 +171,7 @@ import Singer from '@/common/singer.js'
                           } 
                       }
                       map[key].items.push(new Singer (
+                             item.Fsinger_id,
                              item.Fsinger_mid,
                              item.Fsinger_name,
                       ))
@@ -249,11 +259,13 @@ import Singer from '@/common/singer.js'
         }
     }
 }
-.fade-enter,fade-leave-to{
-   opacity:0
+.slide-enter-active,.slide-leave-active{
+    transition: all .3s;   
 }
-.fade-enter-active,.fade-leave-active{
-    opacity: 1;
-    transition: all 1s;
+.slide-leave-to,.slide-enter{
+    transform: translate3d(100%,0,0);
 }
+//.slide-enter{
+ //   transform: translate3d(100%,0,0);
+ // }
 </style>

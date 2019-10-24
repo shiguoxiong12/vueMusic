@@ -32,6 +32,20 @@
       "font_class": "xiazai",
       "unicode": "e6bc",
       "unicode_decimal": 59068
+    },
+    {
+      "icon_id": "5822166",
+      "name": "我-填充",
+      "font_class": "wo",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "10206143",
+      "name": "next step",
+      "font_class": "nextstep",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
     }
   ]
 }
