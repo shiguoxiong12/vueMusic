@@ -37,3 +37,25 @@ export function getSingerDetail(id){
     })
     return jsonp(url,data,options)
 }
+//獲取歌曲vkey
+export function getSongKey(songmid){
+    const url='https://c.y.qq.com/base/fcgi-bin/fcg_music_express_mobile3.fcg'
+    //https://c.y.qq.com/base/fcgi-bin/fcg_music_express_mobile3.fcg
+    const data=Object.assign({},{
+        //jsonpCallback:'musicJsonCallback',//musicJsonCallback
+        loginUin:3051522991,
+        format:'json',
+        platform:'yqq',
+        needNewCode:0,
+        cid:205361747,
+        uin:3050522991,
+        guid:5931742855,
+        songmid:songmid,
+        filename:`C400${songmid}.m4a`
+    })
+    return axios({
+        method: 'get',
+        url: url,
+        params: data
+     })
+}
