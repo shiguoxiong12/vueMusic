@@ -19,7 +19,7 @@ export  function getRecommend(){
 }
 export function getSongList(){ //熱門歌單
   //  let url='/pc/cgi-bin/musicu.fcg';
-  let url='/pc/splclound/fcgi-bin/fcg_grt_diss_by_tag.fcg';
+    let url='/pc/splclound/fcgi-bin/fcg_grt_diss_by_tag.fcg';
     const data=Object.assign({},commonParames, {
         platform: 'yqq',
         hostUin: 0,

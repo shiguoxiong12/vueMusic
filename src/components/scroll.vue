@@ -29,11 +29,12 @@
                     })
                      this.scroll.on("scroll",e=>{
                          console.log(e)
-                        if(e.y<-80){
-                             this.$emit("trigerHide",true)
-                         }else if(e.y>0){
-                             this.$emit("trigerHide",false)
-                         }
+                        // if(e.y<-80){
+                        //      this.$emit("trigerHide",true)
+                        //  }else if(e.y>0){
+                        //      this.$emit("trigerHide",false)
+                        //  }
+                         this.$emit("trigerHide",e)
                      })
                 }
             }

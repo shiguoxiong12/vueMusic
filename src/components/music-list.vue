@@ -49,7 +49,7 @@
         },
         methods:{
             trigerHide(e){
-                if(e){
+                if(e.y<-80){
                     this.$refs.list.style.overflow="hidden";
                     this.$refs.list.style.top='80px'
                     this.$refs.songWraper.$el.style.paddingBottom="80px";

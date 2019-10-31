@@ -10,6 +10,7 @@ import ranking from './views/ranking.vue'
 import search from './views/search.vue'
 import singers from './views/singers.vue'
 import singersDetail from './views/singersDetail.vue'
+import play from './views/play.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -39,10 +40,17 @@ export default new Router({
       name:'singers',
       component:singers,
       children:[
-        {
-          path:':id',
+       
+         {
+          path:'songs/:id',
+          name:'songs',
           component:singersDetail,
-        }
+         },
+         {
+          path:'play/:id',
+          name:'play',
+          component:play
+       },
       ]
     }
   ]

@@ -13,7 +13,7 @@
     import {getSingerDetail,getSongKey} from '@/api/singers.js'
     import Scroll from '@/components/scroll'
     import musicList from '@/components/music-list'
-    import {mapMutations} from 'vuex';
+    import {mapMutations,mapActions} from 'vuex';
     import createSong from '@/common/song'
     export default {
          data(){
@@ -36,7 +36,11 @@
         },
         methods:{
             ...mapMutations({
-               setSinger:'SET_SINGER'
+               setSinger:'SET_SINGER',
+              
+            }),
+            ...mapActions({
+                 selectSongList:"SET_SongLIST"
             }),
             goBack(){
                 this.$router.push({
@@ -62,7 +66,7 @@
                        this.singerDetail=response.data;
                        this.setSinger(response.data);
                        this.songList=this._innormalSong(response.data.list);
-                       console.log(this.songList)
+                        this.selectSongList(this.songList)
                     }
                 })
             }
@@ -74,7 +78,7 @@
 #singerDetail{
     position:fixed;
     width:100%;
-    background: rgb(204, 204, 204);
+    background: rgba(1, 17, 27, 1);
     top:0;
     left:0;
     right:0;

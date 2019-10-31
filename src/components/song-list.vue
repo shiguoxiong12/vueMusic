@@ -1,13 +1,14 @@
 <template>
     <div class="songs">
+         <slot></slot>
          <ul class="song-Wraper">
-              <li v-for="(item,index) in songs" :key="index" class="list">
+              <router-link v-for="item in songs"  tag="li" :to="{path:'/singers/play/' +item.id }" :key="item.id" class="list">
                   <div class="songName">{{item.name}}</div>
                   <div class="songAuthors">{{item.singer}}</div>
-             </li> 
+              </router-link> 
          </ul>
          <van-loading size="12px" type="spinner" color="#1989fa" class="Loadding" v-if="songs.length==0">
-             加载中...
+               加载中...
          </van-loading>
     </div>
 </template>
@@ -20,6 +21,11 @@
                
             }
         },
+        computed:{
+            playUrl(){
+                return 
+            }
+        },
         mounted(){
             
            
@@ -29,7 +35,7 @@
 
 <style lang="scss" scoped>
 .songs{
-    background: #ccc;
+    background: rgba(1, 17, 27, 1);
     width:100%;
     box-sizing: border-box;
     position: relative;

@@ -108,12 +108,15 @@ import Singer from '@/common/singer.js'
                      this.hoverTitle=true;
                  }
                  this.scroll.scrollToElement(this.$refs.first_floor[index], 2000, 0, 0);
-                  this.hoverIndex=this.singerList[this.currentIndex].title
+                 this.hoverIndex=this.singerList[this.currentIndex].title
              },
              selectItem(obj){
                this.$router.push({
-                   path:`/singers/${obj.singermid}`
+                   path:`/singers/songs/${obj.singermid}`
                })
+              
+              
+
              },
              getIndex(timeArr,time) {
                 var timeIndex = -1;
