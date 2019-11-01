@@ -1,8 +1,89 @@
 @keyframes rotate{
-    0%{
+    from{
         transform:rotate(0deg);
     }
-    100%{
+    to{
         transform:rotate(360deg);
     }
+}
+.font-color {
+    font-weight: 600;
+    font-size: 16px;
+    font-family: "黑体";
+    color: #8c888b;
+    background: -webkit-linear-gradient(45deg, #70f7fe, #fbd7c6, #fdefac, #bfb5dd, #bed5f5);
+    -moz-linear-gradient:(45deg, #70f7fe, #fbd7c6, #fdefac, #bfb5dd, #bed5f5);
+    -ms-linear-gradient:(45deg, #70f7fe, #fbd7c6, #fdefac, #bfb5dd, #bed5f5);
+    color: transparent;
+    /*设置字体颜色透明*/
+    -webkit-background-clip:text;
+    /*背景裁剪为文本形式*/
+    animation: ran 10s linear infinite;
+    /*动态10s展示*/
+  }
+  
+  @keyframes ran {
+    from {
+        backgroud-position: 0 0;
+    }
+    to {
+        background-position: 2000px 0;
+    }
+  }
+//   .splite-line{
+//     position: relative;
+//   }
+//   .splite-line::before,.splite-line::after{
+//     display: inline-block;
+//     content: "";
+//     width:100px;
+//     height:1px;
+//     transform: scale(0.5, 0.5);
+//     width: 200%;
+//     height: 200%;
+//     transform-origin: 0 0;
+//     border: 1px solid red;
+//     box-sizing: border-box;
+//   }
+//   .splite-line::before{
+//     transform: translateX(-40px);
+//   }
+//   .splite-line::after{
+//     transform: translateX(40px);
+//   }
+
+  .splite-line {
+    position: relative;
+}
+ 
+.splite-line:before,.splite-line:after {
+    content: "";/* 注意这里为双引号 */
+    position: absolute;
+    width: 60%;
+    border: 1px solid #000;
+    border-radius:5px;/* 也可以设置圆角 */
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    -o-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    
+    top: 50%;
+    box-sizing: border-box;
+}
+
+.splite-line:before{
+    left: 15px;
+}
+.splite-line:after{
+    right: -90px;
+}
+img{
+    border-radius: 5px;
 }

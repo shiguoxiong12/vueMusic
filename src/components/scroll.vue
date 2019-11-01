@@ -6,6 +6,18 @@
 <script>
     import BScroll from 'better-scroll'
     export default {
+        props:{
+            data:{
+                type:Object
+            }
+        },
+        watch:{
+          data(){
+               setTimeout(()=>{
+                  this._initScroll()
+              },100)
+          }
+        },
         data(){
             return{
                scroll:{}

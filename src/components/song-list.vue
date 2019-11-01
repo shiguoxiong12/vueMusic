@@ -2,7 +2,7 @@
     <div class="songs">
          <slot></slot>
          <ul class="song-Wraper">
-              <router-link v-for="item in songs"  tag="li" :to="{path:'/singers/play/' +item.id }" :key="item.id" class="list">
+              <router-link v-for="(item,index) in songs"  tag="li" :to="{path:'/singers/play/' +item.id }" :key="index" @click="selectSong(item)" class="list">
                   <div class="songName">{{item.name}}</div>
                   <div class="songAuthors">{{item.singer}}</div>
               </router-link> 
@@ -25,6 +25,9 @@
             playUrl(){
                 return 
             }
+        },
+        methods:{
+           
         },
         mounted(){
             

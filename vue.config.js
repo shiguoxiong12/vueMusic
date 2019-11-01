@@ -31,7 +31,17 @@ module.exports={
              // host:'c.y.qq.com',
               origin: 'https://y.qq.com'
             }
-          }
+          },
+          '/api/lyric':{
+            target: 'https://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_new.fcg',
+            bypass: function (req, res, proxyOptions) {
+              req.headers.referer = 'https://c.y.qq.com';
+              req.headers.host = 'c.y.qq.com';
+            },
+            pathRewrite: {
+              '^/api/lyric': ''
+            }
+          }    
         }
     }
 }

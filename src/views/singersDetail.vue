@@ -22,6 +22,9 @@
                 songList:[]
              }
         },
+        mounted(){
+            console.log(this.$route)
+        },
         computed:{
            avtor(){
               return "https://y.gtimg.cn/music/photo_new/T001R150x150M000"+this.singerDetail.singer_mid+".jpg?max_age=2592000"
@@ -66,7 +69,11 @@
                        this.singerDetail=response.data;
                        this.setSinger(response.data);
                        this.songList=this._innormalSong(response.data.list);
-                        this.selectSongList(this.songList)
+                      setTimeout(()=>{
+ this.selectSongList(this.songList)
+                      },1000)
+                       
+                        console.log(this.songList)
                     }
                 })
             }

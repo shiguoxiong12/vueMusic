@@ -4,7 +4,10 @@ const mutations={
       state.singers=singer;
   },
   [types.set_songsList]:(state,songslist)=>{
-     state.songsList=songslist;
+     state.songsList=state.myLove.concat(songslist);
+  },
+  [types.change_play]:(state,status)=>{
+    state.playStatus=status;
   }
 
 }

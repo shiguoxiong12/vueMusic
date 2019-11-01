@@ -5,15 +5,11 @@
  -->
 <template>
 <div>
-    <buttonaaa/>
-    <!-- <bar/> -->
     <div class="recommend" v-show="bannerList.length>0">
          <banner :bannerlist="bannerList"/>
-       
          <div class="list">
-        
              <layout>
-                    <h4 class="" slot="title">電台</h4>
+                    <h4 class="font-color" slot="title">電台</h4>
                     <div slot="content" class="wrape">
 
                     <div class='wrape-item' v-for="(item) in radioList" :key="item.radioid">
@@ -27,23 +23,20 @@
                     </div>
                </layout>
                 <layout>
-                    <h4 class="" slot="title">熱門歌單</h4>
+                    <h4 class="font-color splite-line" slot="title" style="text-align:center;">我的最愛</h4>
                     <div slot="content" class="wrape">
 
-                    <div class='wrape-item' v-for="(item) in SongList" :key="item.id">
-                    <div class="">
+                    <router-link tag="div" :to="{ path:'/singers/play/'+item.id}" class='wrape-item' v-for="(item) in getLove" :key="item.id">
                         <div class="image">
-                            <img :src="item.picUrl"/>
+                            <img :src="item.image"/>
                         </div>
-                        <p class="songListDesc">{{item.songListDesc}}</p>
-                        <p>{{item.songListAuthor}}</p>
+                        <p>{{item.singer}}</p>
                         <p class="desc">
-                            <i class="iconfont icon-erji"></i>
+                            <!-- <i class="iconfont icon-erji"></i>
                             {{item.accessnum | componentFilter}}
-                            <i class="iconfont icon-bofang" style="float:right"></i>
+                            <i class="iconfont icon-bofang" style="float:right"></i> -->
                         </p>
-                    </div>
-                        </div>
+                        </router-link>
                     </div>
                </layout>
            </div> 
@@ -63,6 +56,7 @@
     import banner from '@/components/banner'
     import layout from '@/components/layout'
     import loading2 from '@/components/loading'
+    import { mapGetters } from 'vuex';
     //import bar from '@/components/bar'
     export default {
          created(){
@@ -90,6 +84,12 @@
                     return value;
                 }
             }
+        },
+        computed:{
+          ...mapGetters(["getLove"])
+        },
+        mounted(){
+           this.$toast('我的最愛歌單裡面可以聽歌哦!');
         },
          methods:{
             _getRecommend(){
@@ -138,5 +138,9 @@
         .spinner{
             text-align: center;
         }
+    }
+    img{
+        width:100%;
+        height:100%;
     }
 </style>

@@ -47,6 +47,11 @@
               return `background-image:url('${this.avtor}')`
           }
         },
+         watch:{
+           "$route.fullPath":function(){
+               console.log("改變了")
+           }
+        },
         methods:{
             trigerHide(e){
                 if(e.y<-80){

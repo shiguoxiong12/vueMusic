@@ -41,11 +41,39 @@
       "unicode_decimal": 59001
     },
     {
+      "icon_id": "8214639",
+      "name": "播放",
+      "font_class": "bofang1",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "8341784",
+      "name": "上一首",
+      "font_class": "shangyishou",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "8341786",
+      "name": "下一首",
+      "font_class": "xiayishou",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
       "icon_id": "10206143",
       "name": "next step",
       "font_class": "nextstep",
       "unicode": "e66c",
       "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "11549656",
+      "name": "暫停播放",
+      "font_class": "zantingbofang",
+      "unicode": "e738",
+      "unicode_decimal": 59192
     }
   ]
 }

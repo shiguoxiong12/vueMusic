@@ -37,7 +37,10 @@
         </div>
     </div>
      <transition name="slide">
-         <router-view/>
+         <!-- <keep-alive key="$4">
+            <router-view v-if="$route.meta.keepAlive" :key="$route.name"/>
+         </keep-alive> -->
+         <router-view   :key="$route.name"></router-view>
      </transition>
   </div>
 </template>

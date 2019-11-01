@@ -45,10 +45,16 @@ export default new Router({
           path:'songs/:id',
           name:'songs',
           component:singersDetail,
+          meta:{
+            keepAlive:true
+          }
          },
          {
           path:'play/:id',
           name:'play',
+          meta:{
+            keepAlive:true
+          },
           component:play
        },
       ]
