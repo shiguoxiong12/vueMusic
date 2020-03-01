@@ -12,7 +12,7 @@ import './font/iconfont.css'
 import './scss/index.scss'
 import vant from 'vant';
 import 'vant/lib/index.css';
-import './gloab'
+//import './gloab'
 import vconsole from 'vconsole'
 import VueLazyload from 'vue-lazyload'
 import FastClick from 'fastclick';
@@ -27,6 +27,8 @@ Vue.use(VueLazyload,{
 FastClick.attach(document.body);
 Vue.use(vant);
 Vue.config.productionTip = false
+
+
 
 new Vue({
   router,
