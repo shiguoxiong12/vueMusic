@@ -5,8 +5,8 @@
  -->
 <template>
     <div class='ranking'>
-         <van-button type="default">默认按钮</van-button>
-    </div>
+         <h2> 一些vue示例 </h2>
+      </div>
 </template>
 
 <script>

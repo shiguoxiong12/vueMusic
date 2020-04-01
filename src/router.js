@@ -10,7 +10,9 @@ import ranking from './views/ranking.vue'
 import search from './views/search.vue'
 import singers from './views/singers.vue'
 import singersDetail from './views/singersDetail.vue'
+import test from './views/test.vue'
 import play from './views/play.vue'
+import study from './views/study.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -18,7 +20,12 @@ export default new Router({
     {
       path: '/',
       name:'/',
-      redirect:'/recommend'
+      component:study
+    },
+    {
+       path:'/test',
+       name:'test',
+       component:test
     },
     {
       path: '/recommend',

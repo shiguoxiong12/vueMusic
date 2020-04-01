@@ -15,12 +15,22 @@
   </div>
 </template>
 <script>
+import { getAllRoles } from "@/mock/user";
 import Tab from '@/components/tab'
 import Header from '@/components/header'
 export default {
   components:{
     Header,
      Tab
+  },
+  created(){
+    console.log("created ......")
+    getAllRoles().then(function(){
+       console.log("haha")
+    }).catch(function(){
+       console.log("haha12")
+    })
+   
   }
 }
 </script>

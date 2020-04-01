@@ -69,9 +69,9 @@
                        this.singerDetail=response.data;
                        this.setSinger(response.data);
                        this.songList=this._innormalSong(response.data.list);
-                      setTimeout(()=>{
- this.selectSongList(this.songList)
-                      },1000)
+                       setTimeout(()=>{
+                           this.selectSongList(this.songList)
+                       },1000)
                        
                         console.log(this.songList)
                     }

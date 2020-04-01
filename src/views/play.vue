@@ -18,9 +18,9 @@
            :autoplay="false"
            :controls='false'
            :music="palyResource"
-           @play="onPlayerPlay($event)"
-           @pause="onPlayerPause($event)"
-          
+            @play="onPlayerPlay($event)"
+            @pause="onPlayerPause($event)"
+            @error="onError($event)"
             :narrow="false" theme="#b7daff" mode="circulation"  list-max-height='96px' ref="player"
           ></v-Play>
           <playControl @play="playSong"></playControl>
@@ -29,7 +29,7 @@
        <div class="songs-list" ref="songsList">
            
             <Scroll @trigerHide="trigerHide" :data="getSongList">              
-            <songList :songs="getSongList"  ref="songplayWraper" @select="select"
+            <songList :songs="getSongList"  ref="songplayWraper"
                 >
                      <div class="font-color"
                      style="
@@ -69,20 +69,23 @@
             })
         },
          watch:{
-           "$route.fullPath":{
-               handler:function(){
-                    let id=this.$route.params.id;
-                    this.currentSongId=id;
-                    this.playSong(false);
-                    this.lyric.stop();
-                    this.$nextTick(()=>{
-                    let data=formatSong(this.currentSongDetail.lyric);
-                    this.lyric=new Lyric(data,this.handleLyric)
-                    console.log(this.lyric)
-                    })
-              },
-              immediate: true
-           }
+        //    "$route.fullPath":{
+        //        handler:function(){
+        //             let id=this.$route.params.id;
+        //             this.currentSongId=id;
+        //             if( this.$refs.player){
+        //                  this.playSong(false);
+        //             }
+                  
+        //             this.lyric.stop();
+        //             this.$nextTick(()=>{
+        //             let data=formatSong(this.currentSongDetail.lyric);
+        //             this.lyric=new Lyric(data,this.handleLyric)
+        //             console.log(this.lyric)
+        //             })
+        //       },
+        //       immediate: true
+        //    }
            
         },
         components:{
