@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul,li{
+            margin:0;
+            padding:0;
+        }
+    .selectComponents{
+        
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="toggle()">点击</button>
+       <parent  v-if='isshow'></parent>
+       <selectm label="用户名"></selectm>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./select.js"></script>
+<script>
+    var parent=Vue.component("parent",{
+      //  props:['isshow'],
+        mounted(){
+            // var me=this;
+            // setTimeout(function(){
+            //     me.$destroy()
+            // },2000)
+            this.$on("hook:beforeDestroy",function(){
+                alert("hook销毁了")
+            })
+        },
+        beforeDestroy(){
+            alert("销毁了22")
+        },
+        destroyed(){
+            alert("销毁了33")
+        },
+        template:"<div>腹肌</div>"
+    })
+    new Vue({
+        el:"#app",
+        data(){
+          return{
+            isshow:true
+          }
+        },
+        methods:{
+            toggle(){
+           this.isshow=!this.isshow;
+        },
+        },
+       
+       // component:parent
+    })
+</script>
+</html>

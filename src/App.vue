@@ -9,19 +9,23 @@
     <div id="nav">
        <Tab/>
     </div>
-    <keep-alive>
-      <router-view/>
-     </keep-alive>
+    <hamburger/>
+    <buttonaaa122/>
+    <!-- <keep-alive>
+      <router-view :key="$route.fullPath"/>
+     </keep-alive> -->
   </div>
 </template>
 <script>
 import { getAllRoles } from "@/mock/user";
 import Tab from '@/components/tab'
 import Header from '@/components/header'
+import hamburger from '@/components/hamburger'
 export default {
   components:{
     Header,
-     Tab
+     Tab,
+     hamburger
   },
   created(){
     console.log("created ......")

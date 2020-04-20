@@ -23,9 +23,9 @@
 <style lang="scss" scoped>
 .layout{
     .ly-title{
+        height:10px;
         margin-bottom:5px;
-        height: 30px;
-        line-height: 30px;
+        line-height: 10px;
     }
     .ly-content{
         .icon{
@@ -37,13 +37,11 @@
         .wrape{
             display: flex;
             flex-direction: row;
-            justify-content: start;
+            justify-content: space-around;
             flex-wrap: wrap;
         }
         .wrape-item{
-            width: calc(50%-10px);
-            box-sizing: border-box;
-            margin:  6px 5px;
+            width: 48%;
             position: relative;
             img{
                 width: 100%;

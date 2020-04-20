@@ -1,17 +1,12 @@
-<!--
- * @Author: shiguoxiong
- * @Date: 2019-09-27 10:57:53
- * @Description: 
- -->
 <template>
     <div>
-button
+         <p>slot 特性</p>
     </div>
 </template>
 
 <script>
     export default {
-        name:'buttonaaa122'
+        
     }
 </script>
 

@@ -65,6 +65,7 @@
         },
         beforeRouteEnter:(to,from,next)=>{
             next(vm => {
+                console.log(vm)
                  vm.change(false)
             })
         },
