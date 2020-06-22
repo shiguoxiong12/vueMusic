@@ -63,9 +63,8 @@
                 currentIndex:0
             }
         },
-        beforeRouteEnter:(to,from,next)=>{
+        beforeRouteEnter:(to,from,next)=>{  //动态路由切换时，默认会复用组件导致生命周期不会再执行，引入这个方法可解决
             next(vm => {
-                console.log(vm)
                  vm.change(false)
             })
         },

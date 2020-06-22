@@ -11,9 +11,11 @@
     </div>
     <hamburger/>
     <buttonaaa122/>
-    <!-- <keep-alive>
+    <button @click='success()'>成功</button>
+   <!-- <keep-alive>
       <router-view :key="$route.fullPath"/>
-     </keep-alive> -->
+     </keep-alive>-->
+     <grandfather/>
   </div>
 </template>
 <script>
@@ -21,11 +23,24 @@ import { getAllRoles } from "@/mock/user";
 import Tab from '@/components/tab'
 import Header from '@/components/header'
 import hamburger from '@/components/hamburger'
+import grandfather from '../component-study/grandfather/index.vue'
 export default {
   components:{
     Header,
      Tab,
-     hamburger
+     hamburger,
+     grandfather
+  },
+  mounted(){
+    console.log(this.$alert)
+   
+  },
+  methods:{
+    success(){
+        this.$Message({
+          content:"ha"
+        })
+    }
   },
   created(){
     console.log("created ......")

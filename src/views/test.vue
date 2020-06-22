@@ -6,10 +6,8 @@
 </template>
 
 <script>
-   import Vue from 'vue';
-   Vue.component("aaaa",{
-       template:"<div>a</div>"
-   })
+  
+   
     export default {
         
     }

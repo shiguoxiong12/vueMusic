@@ -13,6 +13,8 @@ import './scss/index.scss'
 import vant from 'vant';
 import 'vant/lib/index.css';
 import './gloab'
+import alert from '../component-study/alert/index.js'
+import message from '../component-study/message/index.js'
 import vconsole from 'vconsole'
 import VueLazyload from 'vue-lazyload'
 import FastClick from 'fastclick';
@@ -29,6 +31,7 @@ Vue.use(vant);
 Vue.component("aaaa",{
   template:"<div>a</div>"
 })
+Vue.use(alert).use(message)
 Vue.config.productionTip = false
 Vue.config.performance = true;  //开启Vue性能模式(适用于开发模式)
 new Vue({
@@ -36,3 +39,4 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+

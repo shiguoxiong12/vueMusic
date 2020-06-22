@@ -13,6 +13,7 @@ import singersDetail from './views/singersDetail.vue'
 import test from './views/test.vue'
 import play from './views/play.vue'
 import study from './views/study.vue'
+import form  from '../component-study/index.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -47,7 +48,6 @@ export default new Router({
       name:'singers',
       component:singers,
       children:[
-       
          {
           path:'songs/:id',
           name:'songs',
@@ -65,6 +65,11 @@ export default new Router({
           component:play
        },
       ]
+    },
+    {
+      path: '/form',
+      name:'form',
+      component:form 
     }
   ]
 })
