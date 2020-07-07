@@ -6,6 +6,7 @@
 <template>
   <div id="app">
     <Header/>
+    <list/>
     <div id="nav">
        <Tab/>
     </div>
@@ -24,12 +25,14 @@ import Tab from '@/components/tab'
 import Header from '@/components/header'
 import hamburger from '@/components/hamburger'
 import grandfather from '../component-study/grandfather/index.vue'
+import list from '../component-study/list/index.vue'
 export default {
   components:{
     Header,
      Tab,
      hamburger,
-     grandfather
+     grandfather,
+     list
   },
   mounted(){
     console.log(this.$alert)
