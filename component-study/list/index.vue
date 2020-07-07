@@ -4,7 +4,8 @@
   </div>
 </template>
 
-<script>
+<script> 
+
 export default {
 name:'list',
 data(){

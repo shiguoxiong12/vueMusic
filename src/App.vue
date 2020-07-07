@@ -10,6 +10,7 @@
     <div id="nav">
        <Tab/>
     </div>
+    <timeline/>
     <hamburger/>
     <buttonaaa122/>
     <button @click='success()'>成功</button>
@@ -26,13 +27,15 @@ import Header from '@/components/header'
 import hamburger from '@/components/hamburger'
 import grandfather from '../component-study/grandfather/index.vue'
 import list from '../component-study/list/index.vue'
+import timeline from '../component-study/timeline/index.vue'
 export default {
   components:{
     Header,
      Tab,
      hamburger,
      grandfather,
-     list
+     list,
+     timeline
   },
   mounted(){
     console.log(this.$alert)
